@@ -1,0 +1,16 @@
+# Default ignored files
+.idea
+
+# Credentials
+
+# Data
+
+# Logs
+
+# Dist
+
+# Old Version
+
+# Pycache
+__pycache__
+

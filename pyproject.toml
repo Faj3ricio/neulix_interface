@@ -1,0 +1,17 @@
+[project]
+name = "neulix-interface"
+version = "0.0.0"
+description = "Interface web para visualização de dados, criada para centralizar e explorar informações de forma clara, intuitiva e acessível. Ideal para acompanhar métricas, resultados e insights."
+authors = [
+    {name = "Fabrício A. Lopes"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gitpython (>=3.1.44,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
