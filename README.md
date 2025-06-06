@@ -8,8 +8,10 @@
 * **Version:** [CHANGELOG.md](./CHANGELOG.md)
 * **Last Revision:** [CHANGELOG.md](./CHANGELOG.md)
 * **Revisor:** [Fabricio A. Lopes](mailto:fabricio.albergaria@gmail.com)
-
----
+<!--
+![tiro-vertical-foret-de-soignes-belgica-bruxelas-com-o-sol-brilhando-atraves-dos-galhos](https://github.com/user-attachments/assets/ef8d3e0e-127c-413d-a1cf-1fccdec89645)
+-->
+--- 
 
 ## 📂 Estrutura do Repositório
 
