@@ -1,5 +1,3 @@
----
-
 # Neulix Interface
 
 ## O **Neulix Interface** é o projeto principal de interface da Neulix. Desenvolvido em Python, ele roda sobre o Streamlit.
