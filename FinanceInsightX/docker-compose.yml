@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  home:
+    build: .
+    environment:
+      - APP_FILE=home.py
+      - PORT=8501
+      - BASE_PATH=
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./assets:/app/assets
+      - ./pages:/app/pages
+      - ./home.py:/app/home.py
