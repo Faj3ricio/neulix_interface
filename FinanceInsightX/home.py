@@ -24,6 +24,8 @@ st.markdown(f"""
     <div class="splash-description">
         Sistema de Monitoramento de<br>Consumo de Energia
     </div>
-    <a class="splash-button" href="-server.enableCORS/login">Entrar</a>
 </div>
 """, unsafe_allow_html=True)
+
+if st.button("Entrar", key="login_btn", use_container_width=True):
+    st.switch_page("pages/login.py")
