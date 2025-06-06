@@ -1,0 +1,81 @@
+/* Reset e configurações gerais */
+.main > div {
+    padding: 1rem !important;
+}
+
+.block-container {
+    padding: 1rem !important;
+    max-width: 100% !important;
+}
+
+/* Tela Principal */
+.main-screen {
+    background: white;
+    min-height: 100vh;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    border-bottom: 1px solid #e8e8e8;
+    margin-bottom: 2rem;
+}
+
+.main-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e20;
+}
+
+.main-subtitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f4d03f;
+}
+
+.energy-card {
+    background: linear-gradient(135deg, #f4d03f 0%, #f7dc6f 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    color: #2c3e20;
+    margin: 1rem 0;
+}
+
+.energy-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Hide Streamlit elements */
+.stApp > header {visibility: hidden;}
+.stApp > footer {visibility: hidden;}
+#MainMenu {visibility: hidden;}
+.stDeployButton {display: none;}
+.stDecoration {display: none;}
+.css-1d391kg {display: none;}
+.css-1y4p8pa {display: none;}
+[data-testid="stSidebar"] {display: none !important;}
+
+/* Botões personalizados */
+.stButton > button {
+    background: #2c3e20 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    background: #3a4a2a !important;

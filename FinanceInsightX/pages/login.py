@@ -3,7 +3,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
 
-css_path = os.path.join(project_root, "assets", "base.css")
+css_path = os.path.join(project_root, "assets", "home.css")
 icon = os.path.join(project_root, "assets", "icon_bl.svg")
 
 st.set_page_config(page_title="Dashboard",page_icon=icon, layout="wide", initial_sidebar_state="collapsed")
