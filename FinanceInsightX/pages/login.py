@@ -1,10 +1,11 @@
 import streamlit as st
 import os
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(current_dir)
 
-css_path = os.path.join(project_root, "assets", "home.css")
-icon = os.path.join(project_root, "assets", "icon_bl.svg")
+css_path = os.path.join(project_root, "assets", "login.css")
+icon = os.path.join(project_root, "assets", "icon_green.svg")
 
 st.set_page_config(page_title="Dashboard",page_icon=icon, layout="wide", initial_sidebar_state="collapsed")
 
@@ -32,10 +33,19 @@ with col2:
     if st.button("✕", key="close_btn", help="Voltar"):
         st.switch_page("home.py")
 
+    HERE = os.path.dirname(os.path.abspath(__file__))
+    # sobe um nível (..), entra em assets e aponta pro SVG
+    svg_path = os.path.join(HERE, os.pardir, "assets", "icon_wt.svg")
+
+    # lê o SVG
+    with open(svg_path, "r", encoding="utf-8")  as svg_file:
+        icon_wt = svg_file.read()
+
     # Card de login
     with st.container():
-        st.markdown("""
+        st.markdown(f"""
         <div class="login-container">
+            <div class="login-logo">{icon_wt}</div>
             <div class="login-title">Finance</div>
             <div class="login-subtitle">Insight X</div>
             <div class="login-label">Login</div>
@@ -51,3 +61,4 @@ with col2:
                 st.switch_page("pages/dashboards.py")
             else:
                 st.error("Por favor, preencha todos os campos!")
+

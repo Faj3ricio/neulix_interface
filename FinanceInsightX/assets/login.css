@@ -8,8 +8,10 @@
     max-width: 100% !important;
 }
 
+
+
 /* Tela de Login */
-.login-screen {
+login-screen {
     background: linear-gradient(135deg, #f4d03f 0%, #f7dc6f 50%, #fcf3cf 100%);
     min-height: 100vh;
     display: flex;
@@ -19,13 +21,12 @@
 }
 
 .login-container {
-    background: white;
     padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     width: 400px;
     text-align: center;
-    margin: 2rem;
+    margin: 20px auto;            /* centraliza horizontalmente e dá espaçamento vertical */
+    position: relative;           /* mantém posicionamento relativose precisar de ajustes finos */
+    text-align: center;
 }
 
 .login-title {
@@ -40,12 +41,14 @@
     font-weight: bold;
     color: #f4d03f;
     margin-bottom: 1rem;
+    margin-top: -35px;
 }
 
 .login-label {
     color: #666;
     margin-bottom: 2rem;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
+    margin-top: 70px;
 }
 
 /* Decorações geométricas */
@@ -63,29 +66,6 @@
     border-radius: 20px;
 }
 
-.shape-1 {
-    width: 200px;
-    height: 200px;
-    top: 10%;
-    left: 10%;
-    transform: rotate(45deg);
-}
-
-.shape-2 {
-    width: 150px;
-    height: 150px;
-    bottom: 20%;
-    right: 15%;
-    transform: rotate(-30deg);
-}
-
-.shape-3 {
-    width: 100px;
-    height: 300px;
-    top: 30%;
-    right: 5%;
-    transform: rotate(15deg);
-}
 
 /* Hide Streamlit elements */
 .stApp > header {visibility: hidden;}
@@ -99,7 +79,7 @@
 
 /* Botão personalizado */
 .stButton > button {
-    background: #f4d03f !important;
+    background: #f4f4f4 !important;
     color: #2c3e20 !important;
     border: none !important;
     padding: 15px !important;
@@ -108,6 +88,13 @@
     border-radius: 10px !important;
     width: 100% !important;
     transition: all 0.3s ease !important;
+    width: 400px !important;
+      margin: 0 auto !important;
+        display: flex !important;
+
+
+
+
 }
 
 .stButton > button:hover {
@@ -117,13 +104,68 @@
 
 /* Inputs personalizados */
 .stTextInput > div > div > input {
-    background: #f8f9fa !important;
+    background: #666666 !important;
     border: 2px solid #e8e8e8 !important;
     border-radius: 10px !important;
     padding: 15px !important;
     font-size: 1rem !important;
+    width: 400px !important;
 }
 
 .stTextInput > div > div > input:focus {
-    border-color: #f4d03f !important;
+    border-color: #666666 !important;
     box-shadow: none !important;
+
+}
+
+/* 1) Centraliza e padroniza o “fundo escuro” por trás dos inputs */
+.stTextInput > div > div {
+  width: 400px !important;          /* ou a largura que você quiser */
+  margin: 0 auto !important;        /* centraliza horizontalmente */
+  background: #25232A !important;   /* mesma cor de fundo que já usava */
+  box-shadow: none !important;      /* remove qualquer sombra extra */
+  border-radius: 10px !important;   /* garante arredondamento uniforme */
+  padding: 0 !important;            /* limpa padding “misterioso” */
+}
+
+/* 2) Faz o input preencher 100% desse container */
+.stTextInput > div > div > input {
+  width: 100% !important;
+  margin: 0 !important;             /* remove margens sobrando */
+  padding: 15px !important;
+  border-radius: 10px !important;   /* mesmo border-radius do container */
+  box-shadow: none !important;      /* tira sombra de foco padrão */
+}
+
+/* 3) Ajusta o foco pra não “vazar” sombra fora do container */
+.stTextInput > div > div > input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(102,102,102,0.2) !important;
+}
+
+/* 0) Garantir que o próprio stTextInput seja flex e centralize */
+.stTextInput {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* 1) Zerar fundo/sombra do wrapper externo */
+.stTextInput > div {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;     /* tira qualquer borda */
+  outline: none !important;    /* tira eventual contorno de foco */
+}
+
+
+.st-emotion-cache-1y9tyez.edtmxes15{
+    opacity: 0;
+}
+
+.login-logo svg {
+    width: 100px;         /* ajuste como preferir */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
