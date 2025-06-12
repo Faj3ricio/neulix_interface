@@ -1,60 +1,251 @@
 /* Reset e configurações gerais */
 .main > div {
-    padding: 1rem !important;
+    padding: 0 !important;
+
 }
 
 .block-container {
-    padding: 1rem !important;
+    padding: 1rem 7rem !important;
     max-width: 100% !important;
 }
 
-/* Tela Principal */
-.main-screen {
-    background: white;
-    min-height: 100vh;
+/* Remove elementos indesejados do Streamlit */
+.stApp > div:first-child {
+    display: none;
 }
 
+.main .block-container > div:first-child {
+    display: none;
+}
+
+
+/* Header principal */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background: white;
-    border-bottom: 1px solid #e8e8e8;
+    padding: 1.5rem 0;
+    background: transparent;
+    border-bottom: 3px solid #f4d03f;
     margin-bottom: 2rem;
+    position: relative;
 }
 
 .main-logo {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .main-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: #2c3e20;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Arial Black', Arial, sans-serif;
 }
 
 .main-subtitle {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-weight: 900;
     color: #f4d03f;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Arial Black', Arial, sans-serif;
+    margin-top: -15px;
 }
 
+.logout-container {
+    position: relative;
+}
+
+.logout-btn {
+    background: linear-gradient(135deg, #2c3e20 0%, #3a4a2a 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(44, 62, 32, 0.3);
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #3a4a2a 0%, #2c3e20 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 62, 32, 0.4);
+}
+
+/* Card principal do sistema */
 .energy-card {
-    background: linear-gradient(135deg, #f4d03f 0%, #f7dc6f 100%);
-    padding: 2rem;
-    border-radius: 15px;
+    background: linear-gradient(135deg, #c4a93c 0%, #477c3d 100%);
+    padding: 3rem 2rem;
+    border-radius: 20px;
     text-align: center;
     color: #2c3e20;
-    margin: 1rem 0;
+    margin: 2rem 0;
+    box-shadow: 0 10px 30px rgba(244, 208, 63, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.energy-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.energy-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .energy-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 900;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.energy-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.8;
+    position: relative;
+    z-index: 2;
+}
+
+/* Seção de métricas */
+.metrics-section {
+    margin: 3rem 0;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.metric-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f4d03f 0%, #2c3e20 100%);
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #2c3e20;
+    margin-bottom: 0.5rem;
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.metric-change {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+}
+
+.metric-change.positive {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.metric-change.negative {
+    background: rgba(244, 67, 54, 0.1);
+    color: #F44336;
+}
+
+.metric-change.neutral {
+    background: rgba(244, 208, 63, 0.2);
+    color: #2c3e20;
+}
+
+/* Seção de gráficos */
+.charts-section {
+    margin: 3rem 0;
+}
+
+.chart-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2c3e20 0%, #f4d03f 100%);
+}
+
+.chart-container.full-width {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+/* Seção inferior */
+.bottom-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 2px solid #f4d03f;
 }
 
 /* Hide Streamlit elements */
@@ -67,15 +258,108 @@
 .css-1y4p8pa {display: none;}
 [data-testid="stSidebar"] {display: none !important;}
 
-/* Botões personalizados */
+/* Remove elementos vazios do Streamlit */
+.main > div > div:empty {
+    display: none !important;
+}
+
+/* Remove containers vazios */
+div[data-testid="element-container"]:empty {
+    display: none !important;
+}
+
+/* Remove espaçamento desnecessário */
+.main .block-container {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Botões personalizados do Streamlit */
 .stButton > button {
-    background: #2c3e20 !important;
+    background: linear-gradient(135deg, #2c3e20 0%, #3a4a2a 100%) !important;
     color: white !important;
     border: none !important;
-    border-radius: 10px !important;
-    padding: 0.5rem 1rem !important;
+    border-radius: 12px !important;
+    padding: 0.8rem 2rem !important;
+    font-weight: bold !important;
     transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(44, 62, 32, 0.3) !important;
+    font-size: 1rem !important;
 }
 
 .stButton > button:hover {
-    background: #3a4a2a !important;
+    background: linear-gradient(135deg, #3a4a2a 0%, #2c3e20 100%) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(44, 62, 32, 0.4) !important;
+}
+
+/* Melhorias para responsividade */
+@media (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem 1.5rem;
+    }
+
+    .block-container {
+        padding: 1rem !important;
+    }
+
+    .main-title, .main-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .energy-title {
+        font-size: 1.5rem;
+    }
+
+    .metrics-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .metric-card {
+        margin: 0 auto;
+        max-width: 300px;
+    }
+}
+
+/* Animações suaves */
+* {
+    transition: all 0.3s ease;
+}
+
+/* Estilo para os gráficos Plotly */
+.js-plotly-plot .plotly .modebar {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-radius: 8px !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn {
+    color: #2c3e20 !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn:hover {
+    background: #f4d03f !important;
+}
+
+.st-emotion-cache-1y9tyez.edtmxes15{
+    opacity: 0;
+}
+
+.dash-logo svg {
+    width: 70px;         /* ajuste como preferir */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+.modebar.modebar--hover.ease-bg{
+    background: #666666;
+}
+
+/* Fundo azul fosco e elegante para o dashboard */
+.stMainBlockContainer.block-container.st-emotion-cache-zy6yx3.en45cdb4 {
+    position: relative;
+    background: linear-gradient(120deg, #446341 0%, #bbb685 60%, #515211 100%);
+    /* Azul claro fosco, degrade suave */
+    opacity: 0.96;
+    z-index: 1;
+}

@@ -169,3 +169,28 @@ login-screen {
     display: block;
     margin: 0 auto;
 }
+
+/* Fundo de floresta estática para a tela de login */
+.stApp {
+    position: relative !important;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url('https://images.pexels.com/photos/18780509/pexels-photo-18780509/free-photo-of-an-aerial-view-of-a-green-valley-with-a-lake.jpeg') center center / cover no-repeat;
+    opacity: 0.28;
+    filter: blur(2.5px) brightness(0.7);
+}
+
+/* Garante que o conteúdo fique acima do fundo */
+.stApp > * {
+    position: relative;
+    z-index: 1;
+}

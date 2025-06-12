@@ -12,8 +12,6 @@ body, html {
    Container principal, ocupa 100vh e centraliza vertical/horizontal:
 -------------------------------------------------------------------------*/
 .splash-screen {
-    background: #39780e;
-    background: linear-gradient(9050deg,rgba(57, 120, 14, 1) 58%, rgba(179, 162, 34, 1) 80%);
     display: flex;
     flex-direction: column;
     justify-content: center;      /* centraliza verticalmente */
@@ -25,6 +23,25 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.splash-screen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* Exemplo de GIF animado de floresta (substitua se quiser) */
+    background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2d2dGwyNno4ODdhdG5wOXBmYmV2MWpzMDN4eTZleTYwNXprYWloMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TuptaxRZphuyA/giphy.gif') center center / cover no-repeat;
+    opacity: 0.38;
+    filter: blur(3px) brightness(0.6);
+}
+
+.splash-screen > * {
+    position: relative;
+    z-index: 2; /* aumenta para garantir que está acima do ::before */
 }
 
 /* ------------------------------------------------------------------------
@@ -86,7 +103,8 @@ body, html {
     margin: 20px auto;            /* centraliza horizontalmente e dá espaçamento vertical */
     position: relative;           /* mantém posicionamento relativose precisar de ajustes finos */
     text-align: center;           /* garante texto centralizado dentro do bloco */
-    margin-top: 700px;
+    margin-top: 550px;
+    z-index: 3; /* valor maior para garantir que está acima de tudo */
 }
 
 
