@@ -1,0 +1,165 @@
+/* ------------------------------------------------------------------------
+   Reset de padding/margin, se necessário:
+-------------------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* ------------------------------------------------------------------------
+   Container principal, ocupa 100vh e centraliza vertical/horizontal:
+-------------------------------------------------------------------------*/
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;      /* centraliza verticalmente */
+    align-items: center;          /* centraliza horizontalmente */
+    text-align: center;
+    color: white;
+    position: fixed;              /* fixa a splash em toda a tela */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.splash-screen::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    /* Exemplo de GIF animado de floresta (substitua se quiser) */
+    background: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2d2dGwyNno4ODdhdG5wOXBmYmV2MWpzMDN4eTZleTYwNXprYWloMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TuptaxRZphuyA/giphy.gif') center center / cover no-repeat;
+    opacity: 0.38;
+    filter: blur(3px) brightness(0.6);
+}
+
+.splash-screen > * {
+    position: relative;
+    z-index: 2; /* aumenta para garantir que está acima do ::before */
+}
+
+/* ------------------------------------------------------------------------
+   Logo SVG:
+-------------------------------------------------------------------------*/
+.splash-logo svg {
+    width: 100px;         /* ajuste como preferir */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------------
+   Títulos e descrição:
+-------------------------------------------------------------------------*/
+.splash-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.splash-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: #f4d03f;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
+    margin-top: -35px;
+}
+
+.splash-description {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------------------------------------------------
+   Botão/link de entrar estilizado:
+-------------------------------------------------------------------------*/
+ .st-emotion-cache-10kvrwj.eacrzsi2 {
+    display: block;               /* garante comportamento de bloco para centralização */
+    width: max-content;           /* encolhe à largura do conteúdo + padding */
+    text-decoration: none;
+    background: #f4d03f;
+    color: #2c3e20;
+    padding: 10px 70px;           /* padding menor */
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(244, 208, 63, 0.3);
+    font-size: 2rem;              /* fonte menor */
+    font-weight: 600;
+    margin: 20px auto;            /* centraliza horizontalmente e dá espaçamento vertical */
+    position: relative;           /* mantém posicionamento relativose precisar de ajustes finos */
+    text-align: center;           /* garante texto centralizado dentro do bloco */
+    margin-top: 550px;
+    z-index: 3; /* valor maior para garantir que está acima de tudo */
+}
+
+
+.st-emotion-cache-10kvrwj.eacrzsi2:hover {
+    background: #f7dc6f;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(244, 208, 63, 0.4);
+}
+
+.st-emotion-cache-10kvrwj.eacrzsi2:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 10px rgba(244, 208, 63, 0.3);
+}
+
+/* ------------------------------------------------------------------------
+   Esconde elementos padrão do Streamlit (se necessário):
+-------------------------------------------------------------------------*/
+.stApp > header { visibility: hidden; }
+.stApp > footer { visibility: hidden; }
+#MainMenu { visibility: hidden; }
+.stDeployButton { display: none; }
+.stDecoration { display: none; }
+[data-testid="stSidebar"] { display: none !important; }
+
+/* ------------------------------------------------------------------------
+   Media queries para responsividade:
+-------------------------------------------------------------------------*/
+@media (max-width: 768px) {
+    .splash-title, .splash-subtitle {
+        font-size: 2.5rem;
+    }
+    .splash-description {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+    .splash-button {
+        padding: 12px 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .splash-title, .splash-subtitle {
+        font-size: 2rem;
+    }
+    .splash-logo svg {
+        width: 80px;
+    }
+    .splash-button {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+.st-emotion-cache-1y9tyez.edtmxes15{
+    opacity: 0;
+}
+

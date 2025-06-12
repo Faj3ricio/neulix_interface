@@ -1,0 +1,196 @@
+/* Reset e configurações gerais */
+.main > div {
+    padding: 0 !important;
+}
+
+.block-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+
+
+/* Tela de Login */
+login-screen {
+    background: linear-gradient(135deg, #f4d03f 0%, #f7dc6f 50%, #fcf3cf 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-container {
+    padding: 3rem;
+    width: 400px;
+    text-align: center;
+    margin: 20px auto;            /* centraliza horizontalmente e dá espaçamento vertical */
+    position: relative;           /* mantém posicionamento relativose precisar de ajustes finos */
+    text-align: center;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e20;
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f4d03f;
+    margin-bottom: 1rem;
+    margin-top: -35px;
+}
+
+.login-label {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    margin-top: 70px;
+}
+
+/* Decorações geométricas */
+.geometric-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.geometric-shape {
+    position: absolute;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+}
+
+
+/* Hide Streamlit elements */
+.stApp > header {visibility: hidden;}
+.stApp > footer {visibility: hidden;}
+#MainMenu {visibility: hidden;}
+.stDeployButton {display: none;}
+.stDecoration {display: none;}
+.css-1d391kg {display: none;}
+.css-1y4p8pa {display: none;}
+[data-testid="stSidebar"] {display: none !important;}
+
+/* Botão personalizado */
+.stButton > button {
+    background: #f4f4f4 !important;
+    color: #2c3e20 !important;
+    border: none !important;
+    padding: 15px !important;
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    transition: all 0.3s ease !important;
+    width: 400px !important;
+      margin: 0 auto !important;
+        display: flex !important;
+
+
+
+
+}
+
+.stButton > button:hover {
+    background: #f7dc6f !important;
+    border: none !important;
+}
+
+/* Inputs personalizados */
+.stTextInput > div > div > input {
+    background: #666666 !important;
+    border: 2px solid #e8e8e8 !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+    font-size: 1rem !important;
+    width: 400px !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #666666 !important;
+    box-shadow: none !important;
+
+}
+
+/* 1) Centraliza e padroniza o “fundo escuro” por trás dos inputs */
+.stTextInput > div > div {
+  width: 400px !important;          /* ou a largura que você quiser */
+  margin: 0 auto !important;        /* centraliza horizontalmente */
+  background: #25232A !important;   /* mesma cor de fundo que já usava */
+  box-shadow: none !important;      /* remove qualquer sombra extra */
+  border-radius: 10px !important;   /* garante arredondamento uniforme */
+  padding: 0 !important;            /* limpa padding “misterioso” */
+}
+
+/* 2) Faz o input preencher 100% desse container */
+.stTextInput > div > div > input {
+  width: 100% !important;
+  margin: 0 !important;             /* remove margens sobrando */
+  padding: 15px !important;
+  border-radius: 10px !important;   /* mesmo border-radius do container */
+  box-shadow: none !important;      /* tira sombra de foco padrão */
+}
+
+/* 3) Ajusta o foco pra não “vazar” sombra fora do container */
+.stTextInput > div > div > input:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(102,102,102,0.2) !important;
+}
+
+/* 0) Garantir que o próprio stTextInput seja flex e centralize */
+.stTextInput {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* 1) Zerar fundo/sombra do wrapper externo */
+.stTextInput > div {
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border: none !important;     /* tira qualquer borda */
+  outline: none !important;    /* tira eventual contorno de foco */
+}
+
+
+.st-emotion-cache-1y9tyez.edtmxes15{
+    opacity: 0;
+}
+
+.login-logo svg {
+    width: 100px;         /* ajuste como preferir */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Fundo de floresta estática para a tela de login */
+.stApp {
+    position: relative !important;
+    min-height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.stApp::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url('https://images.pexels.com/photos/18780509/pexels-photo-18780509/free-photo-of-an-aerial-view-of-a-green-valley-with-a-lake.jpeg') center center / cover no-repeat;
+    opacity: 0.28;
+    filter: blur(2.5px) brightness(0.7);
+}
+
+/* Garante que o conteúdo fique acima do fundo */
+.stApp > * {
+    position: relative;
+    z-index: 1;
+}
